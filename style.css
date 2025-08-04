@@ -1,0 +1,184 @@
+/* Reset and base */
+body {
+  background-color: #DEE8CE; /* pale green */
+  color: #333; /* dark text for readability */
+  font-family: 'Monospace', Monospace;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 1rem;
+  background-color: #BB6653; /* terracotta nav bg */
+  margin: 0;
+}
+
+nav a {
+  color: #FFF8E8; /* cream text */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 0.07em;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+nav a:hover {
+  border-color: #F08B51; /* warm orange highlight */
+}
+
+.profile-pic {
+  display: block;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 2rem auto;
+  border: 3px solid #BB6653; /* terracotta border */
+}
+
+/* Main sections layout */
+
+.intro, .about, .projects {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 2.5fr 3.5fr; /* asymmetric grid for large left, smaller right */
+  gap: 2rem;
+  align-items: start;
+  color: #333;
+}
+
+/* Large left title/text */
+
+.intro h1, 
+.about h2, 
+.projects h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #BB6653; /* terracotta for headings */
+  grid-column: 1 / 2;
+  justify-self: start;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+}
+
+.intro p,
+.about p,
+.projects p {
+  font-size: 1rem;
+  color: #555;
+  grid-column: 2 / 3;
+  margin-top: 0.8rem;
+  font-weight: 400;
+  font-style: normal;
+  max-width: 90%;
+}
+
+/* Project tiles styling */
+
+.project-grid {
+  grid-column: 1 / 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project {
+  background-color: #FFF8E8; /* cream background */
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(187, 102, 83, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #333;
+}
+
+.project:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(240, 139, 81, 0.5); /* warm orange glow */
+}
+
+.project h3 {
+  font-size: 1.5rem;
+  color: #BB6653;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.project p, .project span, .project a {
+  font-size: 0.9rem;
+  color: #555;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.project a {
+  color: #F08B51;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.project a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+
+@media screen and (max-width: 800px) {
+  .intro, .about, .projects {
+    grid-template-columns: 1fr;
+    padding: 1rem 2rem;
+  }
+
+  .intro h1, .about h2, .projects h2 {
+    font-size: 2.5rem;
+    grid-column: 1;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .intro p, .about p, .projects p {
+    grid-column: 1;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tags {
+  margin-top: 0.8rem;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #BB6653;  /* terracotta */
+  color: #FFF8E8;            /* cream */
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+  cursor: default;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.tag:hover {
+  background-color: #F08B51; /* warm orange */
+}
+
+
+::selection {
+  background: #BB6653; /* terracotta */
+  color: #000;
+}
